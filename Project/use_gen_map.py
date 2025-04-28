@@ -36,9 +36,6 @@ def gen_map(index, mz_data_filename, region_spots_filename, spectra_sep = ",", s
         map[y, x] = com.iloc[j2, 4]
     
     # value of the 95 percentile
-    print("output is [map, v95]")
-    if sum(com.iloc[:, 4] > 0) < 10:
-        return [map, 0]
-    v95 = np.percentile(com.iloc[:, 4][com.iloc[:, 4] > 0], 95)
+    print("output is [map]")
 
-    return [map, v95]
+    return map
